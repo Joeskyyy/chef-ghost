@@ -1,4 +1,4 @@
-name             'ghost-blog'
+name             'ghost'
 maintainer       'Cris Gallardo'
 maintainer_email 'c@cristhekid.com'
 license          'Apache 2.0'

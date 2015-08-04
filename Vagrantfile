@@ -84,7 +84,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[ghost-blog::default]'
+      'recipe[ghost::default]'
     ]
   end
 end
