@@ -59,6 +59,8 @@ Ghost AWS SES settings
 
 * `node['ghost-blog']['ses']['aws_secret_key']` - AWS Secret key. Default is `nil`
 * `node['ghost-blog']['ses']['aws_access_key']` - AWS Access key. Default is `nil`
+* `node['ghost-blog']['ses']['smtp_host']` - SMTP Host for SES. Default is `nil`
+* `node['ghost-blog']['ses']['port']` - Port for SES to send mail from. Default is `465`
 
 Ghost MySQL settings
 ----------------
@@ -66,7 +68,7 @@ Ghost MySQL settings
 ## Note about MySQL option
 
 Creating a local MySQL server/database is outside the scope of this cookbook. I am assuming if you are using the `mysql` option for `node['ghost-blog']['app']['db_type']` that
-you already have a MySQL elsewhere such as AWS RDS or on another server. You could always wrap this cookbook and create your own MySQL instance. 
+you already have a MySQL elsewhere such as AWS RDS or on another server. You could always wrap this cookbook and create your own MySQL instance.
 
 * `node['ghost-blog']['mysql']['host']` - MySQL host. Default is `127.0.0.1`
 * `node['ghost-blog']['mysql']['user']` - MySQL user. Default is `ghost_blog`
@@ -80,7 +82,31 @@ Recipes
 default
 -------
 
-The main recipe. This will call all the additional recipes to configure and setup Ghost.
+The main recipe. This will call all the additional recipes to install, configure and start Ghost.
+
+configure
+-------
+
+Configures nginx and ghost per the node attributes
+
+install
+-------
+
+Installs NodeJS, nginx, and ghost.
+
+start
+-------
+Starts nginx, then ghost.
+
+stop
+-------
+
+Stops ghost, then nginx.
+
+stop
+-------
+
+Runs `ghost-blog::stop` then `ghost-blog::start`
 
 Usage
 =====
@@ -92,3 +118,4 @@ Authors
 =====
 
 * Author:: Cris Gallardo (c@cristhekid.com)
+* Additional Contributors:: [Joe Engel](https://github.com/joeskyyy)

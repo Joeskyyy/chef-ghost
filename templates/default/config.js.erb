@@ -17,10 +17,16 @@ config = {
 },
     <% elsif @service == 'SES' %>
     mail: {
-        transport: 'SES',
+        transport: 'SMTP',
         options: {
+          host: "<%= @ses_smtp_host %>",
+          port: <%= @ses_port %>,
+          service: 'SES',
+          auth: {
             AWSAccessKeyID: "<%= @aws_access %>",
             AWSSecretKey: "<%= @aws_secret %>"
+          }
+        }
     }
 },
     <% else %>

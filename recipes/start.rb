@@ -1,7 +1,7 @@
-service 'ghost' do
+service 'nginx' do
   action :start
 end
 
-service 'nginx' do
+service 'ghost' do
   action :start
 end

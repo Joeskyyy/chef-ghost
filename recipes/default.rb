@@ -7,6 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'ghost::install'
-include_recipe 'ghost::configure'
-include_recipe 'ghost::start'
+include_recipe 'ghost-blog::install'
+include_recipe 'ghost-blog::configure'
+include_recipe 'ghost-blog::start'
