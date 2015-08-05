@@ -1,4 +1,4 @@
-# Cookbook Name:: ghost
+# Cookbook Name:: ghost-blog
 # Attributes:: default
 #
 # Copyright (C) 2014 Cris Gallardo
